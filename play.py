@@ -35,7 +35,7 @@ def music_change(current_hour):
     elif(current_hour >=  12 and current_hour < 19):
         music = random.choice(noon_list)
     elif(current_hour >=  19 and current_hour < 24):
-        music = random.choice(noon_list)
+        music = random.choice(eveinig_list)
     else:
         return 0
 
@@ -49,10 +49,11 @@ def main():
 
     while(True):
         current_hour = datetime.datetime.now().hour
+        print("current_hour:",current_hour,"previous_hour:",previous_hour)
         if(previous_hour != current_hour):
             music_change(current_hour)
         previous_hour = current_hour
-        time.sleep(60)
+        time.sleep(30)
 
 if __name__=="__main__":
     main()
